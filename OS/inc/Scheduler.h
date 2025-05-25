@@ -23,6 +23,8 @@ typedef struct Scheduler_Config* Scheduler_Config_Handle;
 
 typedef struct Scheduler* Scheduler_Handle;
 
+extern Result Scheduler_createGlobalScheduler(Scheduler_Config_Handle config);
+
 extern Scheduler_Handle Scheduler_create(Scheduler_Config_Handle config);
 
 extern Result Scheduler_addTask(Scheduler_Handle handle, Scheduler_Task_Handle task);

@@ -31,6 +31,15 @@ typedef struct Scheduler
 static void Scheduler_prepare(Scheduler_Handle handle);
 static Result Scheduler_executeInternal(Scheduler_Handle handle);
 
+static Scheduler_Handle globalScheduler = NULL;
+
+extern Result Scheduler_createGlobalScheduler(Scheduler_Config_Handle config)
+{
+    globalScheduler = Scheduler_create(config);
+
+    return RESULT_OK;
+}
+
 extern Scheduler_Handle Scheduler_create(Scheduler_Config_Handle config)
 {
     Scheduler_Handle handle = NULL;
@@ -71,7 +80,7 @@ extern Result Scheduler_addTask(Scheduler_Handle handle, Scheduler_Task_Handle t
     Scheduler_Entry entry;
     if (NULL == handle)
     {
-        Error_setAndReturn(RESULT_INVALID_HANDLE, RESULT_INVALID_HANDLE);
+        handle = globalScheduler;
     }
 
     if (NULL == task)
@@ -122,7 +131,7 @@ extern Result Scheduler_execute(Scheduler_Handle handle)
 
     if(NULL == handle)
     {
-        Error_setAndReturn(RESULT_INVALID_HANDLE, RESULT_INVALID_HANDLE);
+        handle = globalScheduler;
     }
 
     Scheduler_prepare(handle);

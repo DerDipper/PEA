@@ -48,6 +48,7 @@ HAL_OBJ = $(patsubst %,$(ODIR)/%,$(_HAL_OBJ))
 #Config Objects                 #
 #################################
 _CFG_OBJ = VectorQueue_cfg.o
+_CFG_OBJ += OS_cfg.o
 
 CFG_OBJ = $(patsubst %,$(ODIR)/%,$(_CFG_OBJ))
 
