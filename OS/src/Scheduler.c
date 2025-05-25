@@ -36,7 +36,6 @@ static Scheduler_Handle globalScheduler = NULL;
 extern Result Scheduler_createGlobalScheduler(Scheduler_Config_Handle config)
 {
     globalScheduler = Scheduler_create(config);
-
     return RESULT_OK;
 }
 

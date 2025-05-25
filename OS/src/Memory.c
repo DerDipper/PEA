@@ -1,18 +1,10 @@
 #include "Memory.h"
-
 #include "Allocator.h"
 #include "Error.h"
 
 #include <string.h>
 
-typedef struct Memory
-{
-    void* pData;
-    size_t size;
-}Memory;
-
 const size_t MEMORY_OBJECT_SIZE = sizeof(Memory);
-
 
 Memory_Handle Memory_create(const size_t size)
 {

@@ -14,7 +14,6 @@ extern void Platform_Setup()
         {
             if(initStage ==(uint8_t)(it->type >> 24))
             {
-
                 it->configurator(it->config);
             }
             i++;

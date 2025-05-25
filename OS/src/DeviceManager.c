@@ -3,6 +3,7 @@
 #include "LinkedList.h"
 #include "Error.h"
 #include <string.h>
+#include <stdio.h>
 
 
 typedef struct DeviceManager* DeviceManager_Handle;

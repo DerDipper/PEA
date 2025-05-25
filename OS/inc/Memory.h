@@ -2,6 +2,12 @@
 
 #include "Types.h"
 
+typedef struct Memory
+{
+    void* pData;
+    size_t size;
+}Memory;
+
 extern const size_t MEMORY_OBJECT_SIZE;
 typedef struct Memory* Memory_Handle;
 
